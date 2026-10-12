@@ -1,0 +1,13 @@
+[package]
+name = "LappTeX"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Pinned to the exact commit of the validated mitex-cli 0.2.7 binary.
+mitex = { git = "https://github.com/mitex-rs/mitex", rev = "985d8e725922ceb70ae5459c50c4cb3d733a0ed1" }
+mitex-spec = { git = "https://github.com/mitex-rs/mitex", rev = "985d8e725922ceb70ae5459c50c4cb3d733a0ed1" }
+mitex-spec-gen = { git = "https://github.com/mitex-rs/mitex", rev = "985d8e725922ceb70ae5459c50c4cb3d733a0ed1" }
+# In-process Typst compile (replaces the typst binary).
+typst-embed = { version = "0.1", features = ["html", "fs-packages", "download", "system-downloader", "bundled-fonts"] }
+typst-kit = { version = "0.15.1", features = ["scan-fonts", "system-files", "system-packages", "universe-packages", "system-downloader", "emit-diagnostics"] }
